@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FUO Test Driller</title>
+
+    <meta name="description"
+          content="FUO Test Driller - Practice MTH 101, PHY 101 and CHEM 101">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================================
+     HEADER
+================================ -->
+<header class="topbar">
+
+    <div class="brand">
+        <div class="brand-icon">FUO</div>
+
+        <div>
+            <h1>FUO Test Driller</h1>
+            <p>100 Level Academic Practice</p>
+        </div>
+    </div>
+
+    <div class="header-actions">
+        <button id="homeBtn" class="small-btn">
+            🏠 Home
+        </button>
+
+        <button id="darkModeBtn" class="small-btn">
+            🌙
+        </button>
+    </div>
+
+</header>
+
+
+<!-- ================================
+     MAIN APP
+================================ -->
+<main class="container">
+
+
+    <!-- ============================
+         HOME SCREEN
+    ============================= -->
+    <section id="homeScreen" class="screen active">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <span class="hero-badge">
+                    🎓 FEDERAL UNIVERSITY OTUOKE
+                </span>
+
+                <h2>
+                    Study smarter.
+                    <span>Practice better.</span>
+                </h2>
+
+                <p>
+                    Prepare for your 100-level tests with
+                    MTH 101, PHY 101 and CHEM 101.
+                </p>
+
+                <button id="startBtn" class="primary-btn">
+                    Start Drilling →
+                </button>
+
+            </div>
+
+            <div class="hero-art">
+                <div class="floating-card card-one">
+                    📐 MTH 101
+                </div>
+
+                <div class="floating-card card-two">
+                    ⚛️ CHEM 101
+                </div>
+
+                <div class="floating-card card-three">
+                    ⚡ PHY 101
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- COURSE CARDS -->
+        <div class="section-title">
+            <h3>Choose Your Course</h3>
+            <p>Test yourself from any of the available courses.</p>
+        </div>
+
+        <div class="course-grid">
+
+            <button class="course-card math-card"
+                    data-course="MTH101">
+
+                <div class="course-icon">
+                    ∑
+                </div>
+
+                <div>
+                    <h3>MTH 101</h3>
+                    <p>Mathematics</p>
+                </div>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+
+            <button class="course-card physics-card"
+                    data-course="PHY101">
+
+                <div class="course-icon">
+                    ⚡
+                </div>
+
+                <div>
+                    <h3>PHY 101</h3>
+                    <p>Physics</p>
+                </div>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+
+            <button class="course-card chemistry-card"
+                    data-course="CHEM101">
+
+                <div class="course-icon">
+                    ⚗️
+                </div>
+
+                <div>
+                    <h3>CHEM 101</h3>
+                    <p>Chemistry</p>
+                </div>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+        </div>
+
+
+        <!-- FEATURES -->
+        <div class="features">
+
+            <div class="feature">
+                <span>🎯</span>
+                <div>
+                    <h4>Practice Mode</h4>
+                    <p>Learn at your own pace.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>⏱️</span>
+                <div>
+                    <h4>Exam Mode</h4>
+                    <p>Practice under time pressure.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>📊</span>
+                <div>
+                    <h4>Instant Results</h4>
+                    <p>See your score immediately.</p>
+                </div>
+            </div>
+
+            <div class="feature">
+                <span>🔄</span>
+                <div>
+                    <h4>Retake</h4>
+                    <p>Keep improving your score.</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- BEST SCORES -->
+        <div class="section-title score-title">
+            <h3>Your Best Scores</h3>
+            <p>Your results are saved on this device.</p>
+        </div>
+
+        <div id="bestScores" class="scores-grid"></div>
+
+    </section>
+
+
+
+    <!-- ============================
+         SETUP SCREEN
+    ============================= -->
+    <section id="setupScreen" class="screen">
+
+        <button id="backHomeBtn" class="back-btn">
+            ← Back to Home
+        </button>
+
+        <div class="setup-card">
+
+            <div class="setup-header">
+
+                <span id="setupCourseBadge">
+                    MTH 101
+                </span>
+
+                <h2>Set Up Your Test</h2>
+
+                <p>
+                    Choose how you want to practice.
+                </p>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="topicSelect">
+                    📚 Topic
+                </label>
+
+                <select id="topicSelect">
+                    <option value="all">
+                        General — All Topics
+                    </option>
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    🎮 Mode
+                </label>
+
+                <div class="mode-grid">
+
+                    <button class="mode-card active"
+                            data-mode="practice">
+
+                        <span>📖</span>
+
+                        <strong>Practice Mode</strong>
+
+                        <small>
+                            Learn while answering
+                        </small>
+
+                    </button>
+
+
+                    <button class="mode-card"
+                            data-mode="exam">
+
+                        <span>⏱️</span>
+
+                        <strong>Exam Mode</strong>
+
+                        <small>
+                            Timed test
+                        </small>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="settings-row">
+
+                <div class="form-group">
+
+                    <label for="questionCount">
+                        📝 Number of Questions
+                    </label>
+
+                    <select id="questionCount">
+
+                        <option value="10">10 Questions</option>
+                        <option value="20">20 Questions</option>
+                        <option value="30">30 Questions</option>
+                        <option value="40">40 Questions</option>
+                        <option value="50">50 Questions</option>
+                        <option value="100">100 Questions</option>
+                        <option value="200">200 Questions</option>
+
+                    </select>
+
+                    <small id="availableQuestions">
+                        Available: 0
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="timeSelect">
+                        ⏰ Time
+                    </label>
+
+                    <select id="timeSelect">
+
+                        <option value="10">
+                            10 Minutes
+                        </option>
+
+                        <option value="20">
+                            20 Minutes
+                        </option>
+
+                        <option value="30">
+                            30 Minutes
+                        </option>
+
+                        <option value="45">
+                            45 Minutes
+                        </option>
+
+                        <option value="60">
+                            60 Minutes
+                        </option>
+
+                        <option value="120">
+                            120 Minutes
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button id="beginTestBtn"
+                    class="primary-btn full-btn">
+
+                🚀 Begin Test
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================
+         QUIZ SCREEN
+    ============================= -->
+    <section id="quizScreen" class="screen">
+
+        <div class="quiz-top">
+
+            <div>
+
+                <span id="quizCourse">
+                    MTH 101
+                </span>
+
+                <h2 id="quizTopic">
+                    General Test
+                </h2>
+
+            </div>
+
+
+            <div id="timerBox" class="timer-box">
+
+                <span>⏱️</span>
+
+                <strong id="timer">
+                    00:00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="progress-area">
+
+            <div class="progress-info">
+
+                <span id="questionNumber">
+                    Question 1 of 10
+                </span>
+
+                <span id="answeredCount">
+                    0 answered
+                </span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="question-card">
+
+            <div class="question-label">
+                QUESTION
+            </div>
+
+            <h2 id="questionText">
+                Question goes here
+            </h2>
+
+
+            <div id="optionsContainer"
+                 class="options-container">
+            </div>
+
+
+            <div id="practiceExplanation"
+                 class="explanation hidden">
+
+                <strong>💡 Explanation</strong>
+
+                <p id="explanationText"></p>
+
+            </div>
+
+        </div>
+
+
+        <div class="quiz-navigation">
+
+            <button id="prevBtn"
+                    class="secondary-btn">
+
+                ← Previous
+
+            </button>
+
+
+            <button id="nextBtn"
+                    class="primary-btn">
+
+                Next →
+
+            </button>
+
+        </div>
+
+
+        <div class="question-map">
+
+            <h4>Question Navigator</h4>
+
+            <div id="questionMap"></div>
+
+        </div>
+
+
+        <button id="submitBtn"
+                class="submit-btn">
+
+            Submit Test
+
+        </button>
+
+    </section>
+
+
+
+    <!-- ============================
+         RESULT SCREEN
+    ============================= -->
+    <section id="resultScreen" class="screen">
+
+        <div class="result-card">
+
+            <div class="result-icon">
+                🎉
+            </div>
+
+            <p class="result-label">
+                TEST COMPLETED
+            </p>
+
+            <h2 id="resultTitle">
+                Excellent Work!
+            </h2>
+
+
+            <div class="score-circle">
+
+                <div>
+
+                    <strong id="scorePercentage">
+                        0%
+                    </strong>
+
+                    <span>
+                        Score
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-stats">
+
+                <div class="result-stat correct">
+                    <span>✓</span>
+                    <strong id="correctAnswers">
+                        0
+                    </strong>
+                    <small>Correct</small>
+                </div>
+
+
+                <div class="result-stat wrong">
+                    <span>✕</span>
+                    <strong id="wrongAnswers">
+                        0
+                    </strong>
+                    <small>Wrong</small>
+                </div>
+
+
+                <div class="result-stat unanswered">
+                    <span>—</span>
+                    <strong id="unansweredAnswers">
+                        0
+                    </strong>
+                    <small>Unanswered</small>
+                </div>
+
+            </div>
+
+
+            <div class="grade-box">
+
+                <span>Grade</span>
+
+                <strong id="grade">
+                    A
+                </strong>
+
+            </div>
+
+
+            <div class="result-buttons">
+
+                <button id="reviewBtn"
+                        class="secondary-btn">
+
+                    📋 Review Answers
+
+                </button>
+
+                <button id="retakeBtn"
+                        class="primary-btn">
+
+                    🔄 Retake Test
+
+                </button>
+
+                <button id="resultHomeBtn"
+                        class="secondary-btn">
+
+                    🏠 Home
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================
+         REVIEW SCREEN
+    ============================= -->
+    <section id="reviewScreen" class="screen">
+
+        <div class="review-header">
+
+            <button id="reviewBackBtn"
+                    class="back-btn">
+
+                ← Results
+
+            </button>
+
+            <h2>Review Answers</h2>
+
+            <p>
+                Check your answers and learn from your mistakes.
+            </p>
+
+        </div>
+
+
+        <div id="reviewContainer"
+             class="review-container">
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================================
+     CONFIRM MODAL
+================================ -->
+<div id="confirmModal"
+     class="modal hidden">
+
+    <div class="modal-content">
+
+        <div class="modal-icon">
+            ⚠️
+        </div>
+
+        <h3>Submit Test?</h3>
+
+        <p>
+            Are you sure you want to submit?
+            You can no longer change your answers.
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="cancelSubmit"
+                    class="secondary-btn">
+
+                Continue Test
+
+            </button>
+
+            <button id="confirmSubmit"
+                    class="submit-btn">
+
+                Submit
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================================
+     FOOTER
+================================ -->
+<footer>
+
+    <p>
+        FUO Test Driller © 2026
+    </p>
+
+    <p>
+        Built for learning and academic practice.
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
